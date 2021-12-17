@@ -11,10 +11,10 @@ def a_plus_abs_b(a, b):
     5
     """
     if b < 0:
-        f = _____
+        f = a - b
     else:
-        f = _____
-    return f(a, b)
+        f = a + b
+    return f
 
 def two_of_three(a, b, c):
     """Return x*x + y*y, where x and y are the two largest members of the
@@ -29,7 +29,23 @@ def two_of_three(a, b, c):
     >>> two_of_three(5, 5, 5)
     50
     """
-    return _____
+    if a >= b:
+        if c >= b:
+            x = c
+            y = a
+        else:
+            x = a
+            y = b
+    else:
+        if c >= a:
+            x = c
+            y = b
+        else:
+            x = a
+            y = b 
+
+    f = x * x + y * y
+    return f
 
 def largest_factor(n):
     """Return the largest factor of n that is smaller than n.
@@ -42,6 +58,14 @@ def largest_factor(n):
     1
     """
     "*** YOUR CODE HERE ***"
+    i = 1
+    while i < n:
+        if n % i == 0:
+            fac = i 
+        i = i + 1
+    
+    return fac
+
 
 def if_function(condition, true_result, false_result):
     """Return true_result if condition is a true value, and
@@ -86,12 +110,15 @@ def with_if_function():
 
 def c():
     "*** YOUR CODE HERE ***"
+    return False
 
 def t():
     "*** YOUR CODE HERE ***"
+    print(1)
 
 def f():
     "*** YOUR CODE HERE ***"
+    print(2)
 
 def hailstone(n):
     """Print the hailstone sequence starting at n and return its
@@ -109,3 +136,16 @@ def hailstone(n):
     7
     """
     "*** YOUR CODE HERE ***"
+    a = 1
+    print(int(n))
+    while n != 1:
+        if n % 2 == 0:
+            n = n / 2
+        else:
+            n = 3 * n + 1
+        print(int(n))
+        a = a + 1
+    
+    return a
+        
+    
